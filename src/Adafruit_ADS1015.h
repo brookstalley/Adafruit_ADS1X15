@@ -22,10 +22,11 @@
 #ifndef _ADAFRUIT_ADS1X15_H
 #define _ADAFRUIT_ADS1X15_H
 
-#if ARDUINO >= 100
- #include "Arduino.h"
-#else
- #include "WProgram.h"
+
+#if defined(ARDUINO) && ARDUINO >= 100
+#include "Arduino.h"
+#elif defined(SPARK_CORE)
+#include "Particle.h"
 #endif
 
 #include <Wire.h>
